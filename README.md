@@ -1,58 +1,30 @@
-cat <<EOF > README.md
-# Prometheus & Grafana Monitoring with Docker
+# Prometheus + Grafana Docker Setup
 
-This project sets up **Prometheus**, **Node Exporter**, and **Grafana** using Docker Compose to monitor system metrics in real time.
+This project sets up Prometheus and Grafana using Docker Compose for monitoring and alerting of Docker containers. It includes custom dashboards and alert rules to track system performance and detect anomalies.
 
----
+## Prerequisites
+- Docker
+- Docker Compose
 
-## Features
-- **Prometheus**: Time-series database & monitoring
-- **Node Exporter**: Collects Linux system metrics
-- **Grafana**: Visualizes metrics with dashboards
+## Setup Instructions
+1. Clone the repository  
+   git clone https://github.com/Shivubankar/prometheus-grafana-docker.git  
+   cd prometheus-grafana-docker
 
----
+2. Start the services  
+   docker-compose up -d
+
+3. Access the services:  
+   - Prometheus → http://localhost:9090  
+   - Grafana → http://localhost:3000 (default login: admin/admin)
+
+4. Stop the services  
+   docker-compose down
 
 ## Project Structure
-\`\`\`
-.
-├── docker-compose.yml
-├── prometheus.yml
-└── README.md
-\`\`\`
+- docker-compose.yml → Service definitions  
+- prometheus.yml → Prometheus configuration  
+- README.md → Project documentation
 
----
-
-## How to Run
-1. Clone the repository:
-   \`\`\`bash
-   git clone https://github.com/YOUR_USERNAME/prometheus-grafana-docker.git
-   cd prometheus-grafana-docker
-   \`\`\`
-2. Start the services:
-   \`\`\`bash
-   docker-compose up -d
-   \`\`\`
-3. Access the dashboards:
-   - **Prometheus**: http://localhost:9090
-   - **Node Exporter**: http://localhost:9100/metrics
-   - **Grafana**: http://localhost:3000 (user: admin, pass: admin)
-
----
-
-## Example Prometheus Query
-\`\`\`
-node_filesystem_avail_bytes
-\`\`\`
-
----
-
-## Stop the Services
-\`\`\`bash
-docker-compose down
-\`\`\`
-
----
-
-## Author
-Shivakumar SH
-EOF
+## License
+MIT License
